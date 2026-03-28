@@ -1,6 +1,8 @@
 @use "variabels" as *;
 body {
+  font-family: $secondary-font;
   background-color: $primary-bg-color;
+  color: $text-color;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -14,7 +16,93 @@ body {
 }
 
 .heading {
-  color: $text-color;
+  color: $primary-color;
   font-family: $primary-font;
   font-size: 2.5rem;
+}
+
+.current__joke {
+  background-color: $secondary-bg-color;
+  padding: 0.6rem;
+  margin: 1rem 0.6rem;
+  border-radius: 5px;
+
+  &__text {
+    line-height: 1rem;
+    text-transform: capitalize;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: row;
+
+    &--new {
+      display: flex;
+      gap: 0.3rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      align-items: center;
+      cursor: pointer;
+      background-color: $primary-color;
+      font-weight: 700;
+      font-size: 1rem;
+      border: 1px solid black;
+      transition: all 0.3s ease-in-out;
+
+      & svg {
+        width: 1.5rem;
+      }
+
+      &:hover {
+        background-color: $hover-primary-color;
+      }
+    }
+
+    &--save {
+      background-color: $secondary-bg-color;
+      color: $primary-color;
+
+      &:hover {
+        color: black;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.saved__joke {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__title {
+    font-family: $primary-font;
+    font-size: 2rem;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: $secondary-bg-color;
+    padding: 0.6rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+  }
+
+  & button {
+  }
+
+  & svg {
+    width: 2rem;
+
+    background-color: $delete-color;
+  }
 }
