@@ -1,0 +1,20 @@
+@use "variabels" as *;
+body {
+  background-color: $primary-bg-color;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  color: $text-color;
+  font-family: $primary-font;
+  font-size: 2.5rem;
+}

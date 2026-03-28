@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sass-watch": "sass --watch src/styles:outputs"
   },
   "devDependencies": {
+    "sass": "^1.98.0",
     "vite": "^8.0.1"
   }
 }

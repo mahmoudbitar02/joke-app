@@ -4,10 +4,74 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="outputs/style.css" />
     <title>witze-app</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="container">
+        <h1 class="heading">Witze App</h1>
+        <section class="main">
+          <article class="current__joke">
+            <p class="current__joke__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam velit, ad ipsa ea eum architecto!</p>
+            <div class="current__joke__actions">
+              <button class="current__joke__actions--new">Neue Witz laden</button>
+              <button class="current__joke__actions--new current-joke__actions--save">
+                Witz speichern
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="saved__joke">
+            <h2 class="saved__joke__title">Gespeicherte Witze</h2>
+            <div class="saved__joke__body">
+              <p class="saved__joke__body__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, repellat!</p>
+              <button class="saved__joke__body-delete">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m3 3 1.664 1.664M21 21l-1.5-1.5m-5.485-1.242L12 17.25 4.5 21V8.742m.164-4.078a2.15 2.15 0 0 1 1.743-1.342 48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185V19.5M4.664 4.664 19.5 19.5"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="saved__joke__body">
+              <p class="saved__joke__body__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, repellat!</p>
+              <button class="saved__joke__body-delete">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m3 3 1.664 1.664M21 21l-1.5-1.5m-5.485-1.242L12 17.25 4.5 21V8.742m.164-4.078a2.15 2.15 0 0 1 1.743-1.342 48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185V19.5M4.664 4.664 19.5 19.5"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="saved__joke__body">
+              <p class="saved__joke__body__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, repellat!</p>
+              <button class="saved__joke__body-delete">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m3 3 1.664 1.664M21 21l-1.5-1.5m-5.485-1.242L12 17.25 4.5 21V8.742m.164-4.078a2.15 2.15 0 0 1 1.743-1.342 48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185V19.5M4.664 4.664 19.5 19.5"
+                  />
+                </svg>
+              </button>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
