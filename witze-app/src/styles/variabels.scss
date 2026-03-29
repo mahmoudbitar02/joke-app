@@ -12,3 +12,21 @@ $primary-color: green;
 $delete-color: red;
 $hover-delete-color: rgb(245, 88, 88);
 $hover-primary-color: rgb(0, 103, 0);
+
+@mixin padding($top: 0rem, $right: 0rem, $bottom: 0rem, $left: 0rem) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+@mixin margin($top: 0rem, $right: 0rem, $bottom: 0rem, $left: 0rem) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+@mixin fontSize($size: 1rem) {
+  font-size: $size;
+}
