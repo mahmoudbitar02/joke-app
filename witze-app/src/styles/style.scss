@@ -1,14 +1,21 @@
-@use "variabels" as *;
-body {
-  font-family: $secondary-font;
-  background-color: $primary-bg-color;
-  color: $text-color;
+@use "_variables" as *;
+@use "sass:color";
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: $secondary-font;
+  background-color: $primary-bg-color;
+  color: $text-color;
+}
+
 .container {
+  max-width: 850px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,8 +37,8 @@ body {
   }
 }
 
-.current__joke {
-  @include padding(0.6rem, 0.6rem, 0.6rem, 0.6rem);
+.current-joke {
+  @include padding(0.6rem, 0.9rem, 0.6rem, 0.9rem);
   @include margin(1rem, 0.6rem, 1rem, 0.6rem);
   border-radius: 5px;
   background-color: $secondary-bg-color;
@@ -45,14 +52,16 @@ body {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-direction: row;
+    flex-direction: column;
+    margin-top: 1.5rem;
 
-    &--new {
-      @include padding(0.4rem, 0.6rem, 0.4rem, 0.6rem);
+    &--new,
+    &--save {
+      @include padding(0.6rem, 0.6rem, 0.6rem, 0.6rem);
       @include fontSize(1rem);
       display: flex;
       gap: 0.3rem;
-
+      justify-content: center;
       border-radius: 5px;
       align-items: center;
       cursor: pointer;
@@ -67,7 +76,7 @@ body {
       }
 
       &:hover {
-        background-color: $hover-primary-color;
+        background-color: color.scale($primary-color, $lightness: 10%);
       }
     }
 
@@ -89,6 +98,7 @@ body {
     }
 
     &__actions {
+      flex-direction: row;
       &--new {
         @include fontSize(1.2rem);
         @include padding(0.8rem, 1rem, 0.8rem, 1rem);
@@ -97,41 +107,41 @@ body {
   }
 }
 
-.saved__joke {
-  @include margin(0, 0.6rem, 1rem, 0.6rem);
+.saved-joke {
+  @include margin(1rem, 0.6rem, 1rem, 0.6rem);
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 
   &__title {
     font-family: $primary-font;
     @include fontSize(2rem);
+    margin-bottom: 1.5rem;
   }
 
   &__body {
-    @include padding(0.6rem, 0.6rem, 0.6rem, 0.6rem);
+    @include padding(0.6rem, 0.9rem, 0.6rem, 0.9rem);
     border-radius: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background-color: $secondary-bg-color;
     gap: 0.3rem;
+  }
+  &__remove-icon {
+    @include padding(0.2rem, 0.2rem, 0.2rem, 0.2rem);
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 4px;
+    background-color: $delete-color;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    color: $text-color;
 
-    & svg {
-      @include padding(0.2rem, 0.2rem, 0.2rem, 0.2rem);
-      width: 1.4rem;
-      height: 1.4rem;
-      border-radius: 4px;
-      background-color: $delete-color;
-      transition: all 0.3s ease-in-out;
-      display: block;
-
-      &:hover {
-        background-color: $hover-delete-color;
-      }
+    &:hover {
+      background-color: color.scale($delete-color, $lightness: -15%);
     }
   }
 
@@ -139,8 +149,12 @@ body {
     @include fontSize(1rem);
   }
 
+  &__delete {
+    text-decoration: none;
+  }
+
   @media only screen and (min-width: 600px) {
-    @include margin(0, 0.6rem, 2rem, 0.6rem);
+    @include margin(3rem, 0.6rem, 2rem, 0.6rem);
     &__title {
       @include fontSize(3rem);
     }
@@ -151,13 +165,10 @@ body {
         width: 1.8rem;
         height: 1.8rem;
       }
+    }
 
-      &__text {
-        @include fontSize(1.2rem);
-      }
+    &__text {
+      @include fontSize(1.2rem);
     }
   }
-}
-
-@media only screen and (min-width: 1400px) {
 }
