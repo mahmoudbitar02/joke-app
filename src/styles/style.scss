@@ -44,7 +44,6 @@ body {
   background-color: $secondary-bg-color;
 
   &__text {
-    line-height: 1rem;
     text-transform: capitalize;
   }
 
@@ -108,7 +107,7 @@ body {
 }
 
 .saved-joke {
-  @include margin(1rem, 0.6rem, 1rem, 0.6rem);
+  @include margin(2rem, 0.6rem, 1rem, 0.6rem);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -132,8 +131,8 @@ body {
   }
   &__remove-icon {
     @include padding(0.2rem, 0.2rem, 0.2rem, 0.2rem);
-    width: 1.6rem;
-    height: 1.6rem;
+    width: fit-content;
+
     border-radius: 4px;
     background-color: $delete-color;
     transition: all 0.3s ease-in-out;
@@ -150,7 +149,10 @@ body {
   }
 
   &__delete {
-    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: 1.6rem;
+    border-radius: 4px;
   }
 
   @media only screen and (min-width: 600px) {
