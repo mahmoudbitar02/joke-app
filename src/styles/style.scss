@@ -131,7 +131,7 @@ body {
   }
   &__remove-icon {
     @include padding(0.2rem, 0.2rem, 0.2rem, 0.2rem);
-    width: fit-content;
+    width: 1.6rem;
 
     border-radius: 4px;
     background-color: $delete-color;
