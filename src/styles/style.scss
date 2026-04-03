@@ -108,6 +108,7 @@ body {
 
 .saved-joke {
   @include margin(2rem, 0.6rem, 1rem, 0.6rem);
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -121,13 +122,13 @@ body {
 
   &__body {
     @include padding(0.6rem, 0.9rem, 0.6rem, 0.9rem);
+    margin-top: 1rem;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background-color: $secondary-bg-color;
-    gap: 0.3rem;
   }
   &__remove-icon {
     @include padding(0.2rem, 0.2rem, 0.2rem, 0.2rem);
