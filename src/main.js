@@ -4,6 +4,7 @@ import { getJoke } from "./getJoke.js";
 const jokeButton = document.querySelector(".current-joke__actions--new");
 const saveButton = document.querySelector(".current-joke__actions--save");
 const jokeElement = document.querySelector(".current-joke__text");
+const savedJokesContainer = document.querySelector(".saved-joke__container");
 
 document.addEventListener("DOMContentLoaded", renderSavedJokes);
 renderJoke();
@@ -44,7 +45,6 @@ saveButton.addEventListener("click", () => {
 
 function renderSavedJokes() {
   const savedJokes = getSavedJokes();
-  const savedJokesContainer = document.querySelector(".saved-joke__container");
   let html = "";
 
   if (savedJokes.length === 0) {
@@ -76,8 +76,17 @@ function renderSavedJokes() {
     `;
 
       savedJokesContainer.innerHTML = html;
+
+      const deleteButtonEls = document.querySelectorAll(".saved-joke__delete");
+      deleteButtonEls.forEach((btn) => {
+        const jokeIndex = btn.parentElement.getAttribute("data-index");
+        btn.addEventListener("click", () => {
+          const savedJokes = getSavedJokes();
+          savedJokes.splice(jokeIndex, 1);
+          localStorage.setItem("savedJokes", JSON.stringify(savedJokes));
+          renderSavedJokes();
+        });
+      });
     });
   }
 }
-
-renderSavedJokes();
