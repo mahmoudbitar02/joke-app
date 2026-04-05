@@ -5,12 +5,19 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.light {
+  background-color: white;
+  color: black;
 }
 
 body {
   font-family: $secondary-font;
   background-color: $primary-bg-color;
   color: $text-color;
+  transition: all 0.4s ease;
 }
 
 .container {
@@ -20,6 +27,16 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .heading {
