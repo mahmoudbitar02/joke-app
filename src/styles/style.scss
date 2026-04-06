@@ -29,6 +29,11 @@ body {
   flex-direction: column;
 }
 
+#app {
+  min-height: 100vh;
+  position: relative;
+}
+
 #theme-toggle {
   position: fixed;
   top: 1rem;
@@ -37,6 +42,30 @@ body {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+#category-select {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  @include padding(0.4rem, 0.6rem, 0.4rem, 0.6rem);
+  border-radius: 5px;
+  background-color: $secondary-bg-color;
+  color: $primary-color;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: color.scale($secondary-bg-color, $lightness: -10%);
+    opacity: 1 !important;
+  }
 }
 
 .heading {

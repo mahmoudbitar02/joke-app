@@ -1,21 +1,32 @@
 import "./styles/style.scss";
 import { getJoke } from "./getJoke.js";
-import { toggleTheme } from "./toggle-button.js";
+import { toggleTheme, scrollOpasity } from "./toggle-button.js";
 
 const jokeButton = document.querySelector(".current-joke__actions--new");
 const saveButton = document.querySelector(".current-joke__actions--save");
 const jokeElement = document.querySelector(".current-joke__text");
 const savedJokesContainer = document.querySelector(".saved-joke__container");
+const currentCategoryElement = document.getElementById("category-select");
 
-document.addEventListener("DOMContentLoaded", renderSavedJokes);
-renderJoke();
+let currentCategory = "";
 
-jokeButton.addEventListener("click", () => {
-  renderJoke();
+renderJoke(currentCategory);
+
+currentCategoryElement.addEventListener("change", () => {
+  currentCategory = currentCategoryElement.value;
+  console.log(currentCategory);
+  renderJoke(currentCategory);
 });
 
-async function renderJoke() {
-  const joke = await getJoke();
+document.addEventListener("DOMContentLoaded", renderSavedJokes);
+
+jokeButton.addEventListener("click", () => {
+  renderJoke(currentCategory);
+  console.log(currentCategory);
+});
+
+async function renderJoke(category) {
+  const joke = await getJoke(category);
 
   createJokeElement(joke);
   return joke[0].text;
@@ -93,3 +104,4 @@ function renderSavedJokes() {
 }
 
 toggleTheme();
+scrollOpasity();
