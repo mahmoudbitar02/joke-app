@@ -29,7 +29,6 @@ async function renderJoke(category) {
   const joke = await getJoke(category);
 
   createJokeElement(joke);
-  return joke[0].text;
 }
 
 function createJokeElement(joke) {
@@ -88,16 +87,15 @@ function renderSavedJokes() {
     `;
 
       savedJokesContainer.innerHTML = html;
-
-      const deleteButtonEls = document.querySelectorAll(".saved-joke__delete");
-      deleteButtonEls.forEach((btn) => {
-        const jokeIndex = btn.parentElement.getAttribute("data-index");
-        btn.addEventListener("click", () => {
-          const savedJokes = getSavedJokes();
-          savedJokes.splice(jokeIndex, 1);
-          localStorage.setItem("savedJokes", JSON.stringify(savedJokes));
-          renderSavedJokes();
-        });
+    });
+    const deleteButtonEls = document.querySelectorAll(".saved-joke__delete");
+    deleteButtonEls.forEach((btn) => {
+      const jokeIndex = btn.parentElement.getAttribute("data-index");
+      btn.addEventListener("click", () => {
+        const savedJokes = getSavedJokes();
+        savedJokes.splice(jokeIndex, 1);
+        localStorage.setItem("savedJokes", JSON.stringify(savedJokes));
+        renderSavedJokes();
       });
     });
   }
